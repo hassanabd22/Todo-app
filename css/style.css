@@ -1,0 +1,166 @@
+:root {
+    --bg:hsl(237, 14%, 26%);
+    --bg-task:hsl(233, 14%, 35%);
+    --text:hsl(234, 39%, 85%);
+    --hover-text:hsl(236, 33%, 92%);
+    --complete-text:hsl(234, 11%, 52%);
+    --border-color:rgba(151, 152, 155, 0.15);
+    
+}
+
+.light-mode {
+    --bg-task :hsl(0, 0%, 98%);
+    --bg:hsl(236, 33%, 92%);
+    --text:hsl(235, 19%, 35%);
+    --hover-text:hsl(236, 33%, 92%);
+    --complete-text:hsl(236, 9%, 60%);
+    --border-color:rgba(200, 204, 210, 0.25);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 18px;
+    background-color: var(--bg);
+    position: relative;
+}
+
+.abs-img {
+    position: absolute;
+    width: 100%;
+    height: 340px;
+    z-index: -1;
+}
+
+.app {
+    display: flex;
+    color: var(--complete-text);
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background-repeat: no-repeat;
+    z-index: 100;
+}
+
+.todo {
+    width: 600px;
+    padding: 100px 0;
+    color: var(--text);
+
+}
+
+.todo .title-b-l {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.todo .title-b-l img {
+    cursor: pointer;
+}
+
+
+
+h1 {
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    font-size: 36px;
+}
+
+.input-task {
+    background-color: var(--bg-task);
+    height: 65px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 15px;
+}
+
+.cercl {
+    border: 1px solid var(--complete-text);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    opacity: 0.5;
+}
+
+.input-task input {
+    margin-left: 15px;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: var(--text);
+    letter-spacing: 2px;
+}
+
+.delete {
+    cursor: pointer;
+}
+
+
+.item , .last-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: var(--bg-task);
+    height: 65px;
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.item p {
+    flex-basis: 85%;
+}
+
+.last-item {
+    border: none;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    color: var(--text);
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+
+@media (max-width:800px) {
+    .todo {
+        width: 90%;
+        padding: 100px 0;
+        color: var(--text);
+    
+    } 
+
+    .last-item {
+        padding: 0;
+    }
+    .last-item p , button {
+        padding: 20px;
+    }
+    .state {
+        order: 3;
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        background-color: var(--bg-task);
+        height: 65px;
+        padding: 20px;
+    }
+
+    .prog {
+        margin-top: 100px;
+    }
+}
